@@ -48,8 +48,7 @@ destination: (req, file, cb) => {
  const {layer} = req.body;
   const dir = `./layers/${layer}`
   fs.exists(dir, exist => {
-    if(exist) {
-    fs.rm(dir,{recursive:true},err => {})}
+    
   if (!exist) {
     return fs.mkdir(dir, error => cb(null, dir))
   }
@@ -115,10 +114,10 @@ app.post('/', function(req,res,err){
 );
 app.get('/', function(req,res,err){
 
-  const testFolder = './layers/';
+  const testFolder = './layers/Head';
   const fs = require('fs');
   var arr=[];
-  fs.readdirSync(testFolder).forEach(file => {
+  fs.readdirSync(testFolder,).forEach(file => {
     arr.push(file)
     console.log(file)
   });
