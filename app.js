@@ -82,11 +82,8 @@ const upload = multer({
 
 
 app.post('/uploads',  upload.array('images'), (req, res,err) => {
-  var layerDir = `./layers/`
-  if(!fs.existsSync(layerDir)){
-    fs.mkdirSync(layerDir)
-    console.log('created')
-  }
+
+  
   console.log('yes')
   console.log(req.body)
   res.send(req.body)
@@ -115,6 +112,17 @@ app.post('/', function(req,res,err){
   
 }
 );
+app.get('/', function(req,res,err){
+
+  const testFolder = './layers/';
+  const fs = require('fs');
+  var arr=[];
+  fs.readdirSync(testFolder).forEach(file => {
+    arr.push(file)
+    console.log(file)
+  });
+  res.send(arr)
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
