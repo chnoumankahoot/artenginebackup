@@ -48,7 +48,8 @@ destination: (req, file, cb) => {
  const {layer} = req.body;
   const dir = `./layers/${layer}`
   fs.exists(dir, exist => {
-    fs.rm(dir,{recursive:true},err => {})
+    if(exist) {
+    fs.rm(dir,{recursive:true},err => {})}
   if (!exist) {
     return fs.mkdir(dir, error => cb(null, dir))
   }
