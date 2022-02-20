@@ -112,17 +112,17 @@ app.post('/', function(req,res,err){
   
 }
 );
-app.get('/', function(req,res,err){
+// app.get('/', function(req,res,err){
 
-  const testFolder = './layers/Cap';
-  const fs = require('fs');
-  var arr=[];
-  fs.readdirSync(testFolder,).forEach(file => {
-    arr.push(file)
-    console.log(file)
-  });
-  res.send(arr)
-});
+//   const testFolder = './layers/Cap';
+//   const fs = require('fs');
+//   var arr=[];
+//   fs.readdirSync(testFolder,).forEach(file => {
+//     arr.push(file)
+//     console.log(file)
+//   });
+//   res.send(arr)
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
