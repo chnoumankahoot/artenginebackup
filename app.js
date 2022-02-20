@@ -114,7 +114,7 @@ app.post('/', function(req,res,err){
 );
 app.get('/', function(req,res,err){
 
-  const testFolder = './layers/Head';
+  const testFolder = './layers/Cap';
   const fs = require('fs');
   var arr=[];
   fs.readdirSync(testFolder,).forEach(file => {
